@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script src="dates.js"></script>
+
+        <button type="button" onclick="document.getElementById('demo').innerHTML=d">Show Now</button>
+        <p id="demo"></p><br>
+
+        <button type="button" onclick="document.getElementById('month').innerHTML=getMon()">Show Month</button>
+        <p id="month"></p><br>
+
+        <button type="button" onclick="document.getElementById('day').innerHTML=days()">Compare Dates</button>
+    </body>
+    <script>
+        var d = new Date();
+        var m = d.getMonth();
+        function getMon(){
+            var months= new Array("Jan","Feb","March","Apr","Jun","July","Agu","Sep","Oct","Nov","Dec");
+            return months[m];
+        }    
+    </script>
+</html>

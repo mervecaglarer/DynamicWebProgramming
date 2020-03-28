@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script src="example.js"></script>
+        <h2>Example of Styles</h2>
+
+        <p id="demo1">First Paragraph</p>
+        <button type="button" onclick="document.getElementById('demo1').style.color='blue'">Change Color</button><br><br>
+        
+        <p id="demo2">Second Paragraph</p>
+        <button type="button" onclick="document.getElementById('demo2').style.visibility='hidden'">Make Invisible</button>
+        <button type="button" onclick="document.getElementById('demo2').style.visibility='visible'">Make Invisible</button><br><br>
+        
+        <p id="demo5">Fifth Paragraph</p>
+        <p id="demo6">Sixth Paragraph</p>
+        <button type="button" id="mybutton">My Button</button><br><br>
+        <!-- this example -->
+        <p id="demo3" onclick="changeText(this)">Click here!</p>
+
+        <p id="demo4" onmouseover="Over(this)" onmouseout="Out(this)">Events</p>
+        <script>
+            //document.getElementById('demo').style.color=blue;
+            function changeText(id){
+                id.innerHTML="CLICKED!"
+            }
+            function Over(id){
+                id.innerHTML="Mouse Over!"
+            }
+            function Out(id){
+                id.innerHTML="Mouse Out!"
+            }
+            function changeColor(){
+                document.getElementById('demo5').style.color="green";
+            }
+            function changeColor2(){
+                document.getElementById('demo6').style.color="red";
+            }
+            document.getElementById('mybutton').addEventListener("click",changeColor);
+            document.getElementById('mybutton').addEventListener("click",changeColor2);
+
+            var prg=document.createElement("p");
+            var node= document.createTextNode("Text was created!");
+            prg.appendChild(node);
+            document.body.appendChild(prg);
+
+        </script>
+    </body>
+</html>
