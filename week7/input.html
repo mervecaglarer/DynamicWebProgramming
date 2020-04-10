@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script src="input.js"></script>
+        <title>HTML Form</title>
+        <h1>HTML Form Example</h1>
+
+        <form action="">
+            <label for="fname">First Name:</label><br>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last Name:</label><br>
+            <input type="text" id="lname" name="lname"><br><br>
+            <label for="birthyear">Birth Year:</label><br>
+            <input type="text" name="birthyear" id="birthyear"><br><br>
+            <label for="lessonname">Lesson:</label><br>            
+            <input type="text" id="lessonname" name="lessonname"><br><br>
+        </form>
+
+        <button type="button" onclick="clearForm()">Clear Form</button>
+        <button type="button" onclick="clearForm2(document.getElementsByTagName('input'))">Clear Form Differently</button><br><br>
+        <button type="button" onclick="saveItem(document.getElementById('fname').value,
+        document.getElementById('lname').value,
+        document.getElementById('birthyear').value,
+        document.getElementById('lessonname').value)">Save Form</button><br><br>
+        <button type="button" onclick="document.getElementById('myPersonList').innerHTML=listAll()">List All</button>
+        <button type="button" onclick="listAll2()">List All Differently</button><br><br>
+        <button type="button" onclick="errorControl(document.getElementById('birthyear'))">Check Error</button>
+        
+        <p id="myPersonList"></p>
+    </body>
+</html>
