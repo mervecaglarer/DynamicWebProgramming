@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <h1>JSON Example</h1>
+        <hr>
+
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+        <p id="demo6"></p>
+        <p id="demo7"></p>
+
+        <script>
+            var jsonFormat1='{"name":"John","age":20,"city":"LA"}';
+            var myObj1=JSON.parse(jsonFormat1);
+            $("#demo1").text(myObj1.name+ " " + myObj1.age + " " + myObj1.city);
+
+            var jsonFormat2='["Web","week8","lesson"]';
+            var myObj2=JSON.parse(jsonFormat2);
+            $("#demo2").text(myObj2[0] + " " + myObj2[1] + " " + myObj2[2]);
+
+            var jsonFormat3 = '{"name":"Merve","birthday":"1997-04-29","city":"Mugla"}';
+            var myObj3 = JSON.parse(jsonFormat3);
+            myObj3.birthday=new Date(myObj3.birthday);
+            $("#demo3").text(myObj3.name + " " + myObj3.birthday + " " + myObj3.city);
+
+            var jsonFormat4 = '{"name":"Merve","birthday":"1997-04-29","city":"Mugla"}';
+            var myObj4 = JSON.parse(jsonFormat4,function(key,value){
+                if(key=="birthday"){
+                    return new Date(value);
+                }
+                else{
+                    return value;
+                }
+            });
+            
+            $("#demo4").text(myObj4.name + " " + myObj4.birthday + " " + myObj4.city);
+
+            var jsonFormat5='{"name":"John","age":"function(){return 20;}","city":"LA"}';
+            var myObj5=JSON.parse(jsonFormat5);
+            myObj5.age=eval("(" + myObj5.age + ")");
+            $("#demo5").text(myObj5.name+ " " + myObj5.age() + " " + myObj5.city);
+
+            var myObj6={brand:"BMW",model:"Cabrio",year:2020};
+            var jsonFormat6=JSON.stringify(myObj6);
+            $("#demo6").text(jsonFormat6);
+
+            var myObj7=["BMW","Cabrio",2020];
+            var jsonFormat7=JSON.stringify(myObj7);
+            $("#demo7").text(jsonFormat7);
+
+        </script>
+    </body>
+</html>

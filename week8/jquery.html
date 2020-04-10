@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <h1>Jquery Example</h1>
+        <hr>
+
+        <p id="demo1">Hello</p>
+        <p id="demo2">jquery</p>
+        <p id="demo3">:)</p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+        <p id="demo6"></p>
+
+        <hr>
+
+        <div id="div1">
+            <h2>Hi</h2>
+        </div>
+        <div id="div2">
+            <h2>World!</h2>
+        </div>
+        <p id="demo7"></p>
+
+        <script>
+            $(document).ready(function(){
+                var myElement=$("#demo1");
+
+                var myElement=$("p");
+                $("#demo4").text(myElement[0].innerHTML + " " + myElement[1].innerHTML + " " + myElement[2].innerHTML);
+                
+                document.getElementById('demo2').innerHTML=myElement[1].innerHTML;
+
+                $("#demo3").text(myElement[2].innerHTML);
+
+                var allParg=myElement.text();
+                $("#demo5").text(allParg)
+
+                var myElement=$("#demo1");
+                var firstParg=myElement.text();
+                $("#demo6").text(firstParg);
+
+                var myDivElement=$("#div1");
+                myDivElement.html("<p>Hiiiiii</p>")
+            })
+        </script>
+    </body>
+</html>
